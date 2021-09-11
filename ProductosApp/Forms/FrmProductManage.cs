@@ -1,4 +1,5 @@
-﻿using Domain.Enums;
+﻿using Domain.Entities;
+using Domain.Enums;
 using Infraestructure.Productos;
 using System;
 using System.Collections.Generic;
@@ -15,9 +16,11 @@ namespace ProductosApp.Forms
     public partial class FrmProductManage : Form
     {
         private ProductoModel productoModel;
+        private Producto producto;
         public FrmProductManage()
         {
             productoModel = new ProductoModel();
+            producto = new Producto();
             InitializeComponent();
         }
 
@@ -66,6 +69,25 @@ namespace ProductosApp.Forms
             frmProducto.ShowDialog();
 
             rtbProductView.Text = productoModel.GetProductosAsJson();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            FrmProductIdUpdate frmProductIdUpdate = new FrmProductIdUpdate();
+            frmProductIdUpdate.ProductoModel = productoModel;
+            frmProductIdUpdate.ShowDialog();
+
+            rtbProductView.Text = productoModel.GetProductosAsJson();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            FrmProductIdDelete frmProductIdDelete = new FrmProductIdDelete();
+            frmProductIdDelete.ProductoModel = productoModel;
+            frmProductIdDelete.ShowDialog();
+            
+
+            rtbProductView.Text = "El producto ha sido eliminado.";
         }
     }
 }

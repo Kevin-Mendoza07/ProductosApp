@@ -13,24 +13,17 @@ using System.Windows.Forms;
 
 namespace ProductosApp.Forms
 {
-    public partial class FrmProducto : Form
+    public partial class FrmProductUpdater : Form
     {
         public ProductoModel ProductoModel { get; set; }
-        public FrmProducto()
+        public FrmProductUpdater()
         {
             InitializeComponent();
         }
-
-        private void FrmProducto_Load(object sender, EventArgs e)
+        Producto p;
+        private void btnOk_Click(object sender, EventArgs e)
         {
-            cmbMeasureUnit.Items.AddRange(Enum.GetValues(typeof(UnidadMedida))
-                                              .Cast<object>().ToArray()
-                                         );
-        }
-
-        private void BtnOk_Click(object sender, EventArgs e)
-        {
-            Producto p = new Producto()
+            p = new Producto()
             {
                 Id = ProductoModel.GetLastProductoId() + 1,
                 Nombre = txtName.Text,
@@ -38,12 +31,19 @@ namespace ProductosApp.Forms
                 Existencia = (int)nudExist.Value,
                 Precio = nudPrice.Value,
                 FechaVencimiento = dtpCaducity.Value,
-                UnidadMedida = (UnidadMedida) cmbMeasureUnit.SelectedIndex
+                UnidadMedida = (UnidadMedida)cmbMeasureUnit.SelectedIndex
             };
 
-            ProductoModel.Add(p);
+            ProductoModel.Update(p);
 
             Dispose();
+        }
+
+        private void FrmProductUpdater_Load(object sender, EventArgs e)
+        {
+            cmbMeasureUnit.Items.AddRange(Enum.GetValues(typeof(UnidadMedida))
+                                              .Cast<object>().ToArray()
+                                         );
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

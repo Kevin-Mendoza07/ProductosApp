@@ -3,6 +3,7 @@ using Domain.Enums;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Infraestructure.Productos
@@ -49,12 +50,12 @@ namespace Infraestructure.Productos
             {
                 throw new Exception($"El producto con id:{p.Id} no existe.");
             }
-            if(index != (productos.Length - 1))
+            if (index != (productos.Length - 1))
             {
                 productos[index] = productos[productos.Length - 1];
             }
             Producto[] tmp = new Producto[productos.Length - 1];
-            Array.Copy(productos, tmp, tmp.Length);
+            Array.Copy(productos, tmp, productos.Length - 1);
             productos = tmp;
 
             return productos.Length == tmp.Length;
