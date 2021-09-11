@@ -137,7 +137,6 @@
             // 
             this.cmbMeasureUnit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbMeasureUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMeasureUnit.FormattingEnabled = true;
             this.cmbMeasureUnit.Location = new System.Drawing.Point(109, 193);
             this.cmbMeasureUnit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);

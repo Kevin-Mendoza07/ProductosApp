@@ -30,20 +30,44 @@ namespace ProductosApp.Forms
 
         private void BtnOk_Click(object sender, EventArgs e)
         {
-            Producto p = new Producto()
+            try {
+
+                if (string.IsNullOrEmpty(txtName.Text) ||
+             string.IsNullOrWhiteSpace(txtDesc.Text) ||
+             nudExist.Value == 0 ||
+             nudPrice.Value == 0 ||
+             string.IsNullOrWhiteSpace(cmbMeasureUnit.Text))
+                {
+                    throw new ArgumentException("Error debe llenar todos los campos");
+                    
+                }
+                
+
+                Producto p = new Producto()
+                {
+                    Id = ProductoModel.GetLastProductoId() + 1,
+                    Nombre = txtName.Text,
+                    Descripcion = txtDesc.Text,
+                    Existencia = (int)nudExist.Value,
+                    Precio = nudPrice.Value,
+                    FechaVencimiento = dtpCaducity.Value,
+                    UnidadMedida = (UnidadMedida)cmbMeasureUnit.SelectedIndex
+                };
+
+                ProductoModel.Add(p);
+
+                Dispose();
+            }catch(Exception ex)
             {
-                Id = ProductoModel.GetLastProductoId() + 1,
-                Nombre = txtName.Text,
-                Descripcion = txtDesc.Text,
-                Existencia = (int)nudExist.Value,
-                Precio = nudPrice.Value,
-                FechaVencimiento = dtpCaducity.Value,
-                UnidadMedida = (UnidadMedida) cmbMeasureUnit.SelectedIndex
-            };
+                MessageBox.Show(ex.Message, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+    }
 
-            ProductoModel.Add(p);
-
-            Dispose();
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            var FrmProductManage = new FrmProductManage();
+            FrmProductManage.Show();
+            this.Close(); 
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

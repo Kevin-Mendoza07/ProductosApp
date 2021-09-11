@@ -43,7 +43,7 @@
             this.pnlCaducity = new System.Windows.Forms.Panel();
             this.dtpCaducity = new System.Windows.Forms.DateTimePicker();
             this.rtbProductView = new System.Windows.Forms.RichTextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnBuscarId = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.pnlId.SuspendLayout();
             this.pnlMeasureUnit.SuspendLayout();
@@ -205,6 +205,17 @@
             this.rtbProductView.Size = new System.Drawing.Size(583, 288);
             this.rtbProductView.TabIndex = 5;
             this.rtbProductView.Text = "";
+            this.rtbProductView.TextChanged += new System.EventHandler(this.rtbProductView_TextChanged);
+            // 
+            // btnBuscarId
+            // 
+            this.btnBuscarId.Location = new System.Drawing.Point(462, 7);
+            this.btnBuscarId.Name = "btnBuscarId";
+            this.btnBuscarId.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarId.TabIndex = 6;
+            this.btnBuscarId.Text = "Buscar";
+            this.btnBuscarId.UseVisualStyleBackColor = true;
+            this.btnBuscarId.Click += new System.EventHandler(this.btnBuscarId_Click);
             // 
             // btnSearch
             // 
@@ -219,8 +230,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
-            this.Controls.Add(this.btnSearch);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.rtbProductView);
             this.Controls.Add(this.pnlCaducity);
             this.Controls.Add(this.pnlMeasureUnit);
@@ -261,6 +271,5 @@
         private System.Windows.Forms.Panel pnlCaducity;
         private System.Windows.Forms.DateTimePicker dtpCaducity;
         private System.Windows.Forms.RichTextBox rtbProductView;
-        private System.Windows.Forms.Button btnSearch;
     }
 }
