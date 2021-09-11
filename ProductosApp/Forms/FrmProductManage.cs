@@ -1,4 +1,5 @@
-﻿using Domain.Enums;
+﻿using Domain.Entities;
+using Domain.Enums;
 using Infraestructure.Productos;
 using System;
 using System.Collections.Generic;
@@ -14,9 +15,14 @@ namespace ProductosApp.Forms
 {
     public partial class FrmProductManage : Form
     {
+
+        public Producto Pro { get; set;  }
+       
         private ProductoModel productoModel;
         public FrmProductManage()
         {
+
+            Pro = new Producto(); 
             productoModel = new ProductoModel();
             InitializeComponent();
         }
@@ -67,5 +73,45 @@ namespace ProductosApp.Forms
 
             rtbProductView.Text = productoModel.GetProductosAsJson();
         }
+
+        private void btnBuscarId_Click(object sender, EventArgs e)
+        {
+            try {
+
+                int id;
+                id = int.Parse(txtId.Text);
+
+                if (productoModel.GetProductoById(id) == null)
+                {
+                    MessageBox.Show("Error, este producto no existe en el inventario", "Mensaje de Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
+                  Pro= productoModel.GetProductoById(id);
+                  rtbProductView.Text = productoModel.GetProductosAsJson();
+
+                }
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            }
+
+        private void rtbProductView_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+       
     }
 }
+    
+
+
+

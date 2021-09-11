@@ -38,17 +38,18 @@
             this.pnlMeasureUnit = new System.Windows.Forms.Panel();
             this.cmbMeasureUnit = new System.Windows.Forms.ComboBox();
             this.pnlPriceRange = new System.Windows.Forms.Panel();
-            this.nudFromPrice = new System.Windows.Forms.NumericUpDown();
             this.nudToPrice = new System.Windows.Forms.NumericUpDown();
+            this.nudFromPrice = new System.Windows.Forms.NumericUpDown();
             this.pnlCaducity = new System.Windows.Forms.Panel();
             this.dtpCaducity = new System.Windows.Forms.DateTimePicker();
             this.rtbProductView = new System.Windows.Forms.RichTextBox();
+            this.btnBuscarId = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.pnlId.SuspendLayout();
             this.pnlMeasureUnit.SuspendLayout();
             this.pnlPriceRange.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudFromPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudToPrice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFromPrice)).BeginInit();
             this.pnlCaducity.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,34 +59,38 @@
             this.flowLayoutPanel1.Controls.Add(this.btnUpdate);
             this.flowLayoutPanel1.Controls.Add(this.btnNew);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 401);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(9, 326);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(776, 37);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(582, 30);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(673, 3);
+            this.btnDelete.Location = new System.Drawing.Point(505, 2);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(100, 30);
+            this.btnDelete.Size = new System.Drawing.Size(75, 24);
             this.btnDelete.TabIndex = 0;
             this.btnDelete.Text = "Eliminar";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(567, 3);
+            this.btnUpdate.Location = new System.Drawing.Point(426, 2);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(100, 30);
+            this.btnUpdate.Size = new System.Drawing.Size(75, 24);
             this.btnUpdate.TabIndex = 1;
             this.btnUpdate.Text = "Modificar";
             this.btnUpdate.UseVisualStyleBackColor = true;
             // 
             // btnNew
             // 
-            this.btnNew.Location = new System.Drawing.Point(461, 3);
+            this.btnNew.Location = new System.Drawing.Point(347, 2);
+            this.btnNew.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(100, 30);
+            this.btnNew.Size = new System.Drawing.Size(75, 24);
             this.btnNew.TabIndex = 2;
             this.btnNew.Text = "Nuevo";
             this.btnNew.UseVisualStyleBackColor = true;
@@ -100,99 +105,122 @@
             "Unidad de Medida",
             "Rango de Precio",
             "Fecha de Vencimiento"});
-            this.cmbFinder.Location = new System.Drawing.Point(12, 12);
+            this.cmbFinder.Location = new System.Drawing.Point(9, 10);
+            this.cmbFinder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbFinder.Name = "cmbFinder";
-            this.cmbFinder.Size = new System.Drawing.Size(199, 24);
+            this.cmbFinder.Size = new System.Drawing.Size(150, 21);
             this.cmbFinder.TabIndex = 1;
             this.cmbFinder.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
             // pnlId
             // 
             this.pnlId.Controls.Add(this.txtId);
-            this.pnlId.Location = new System.Drawing.Point(231, 12);
+            this.pnlId.Location = new System.Drawing.Point(173, 10);
+            this.pnlId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlId.Name = "pnlId";
-            this.pnlId.Size = new System.Drawing.Size(343, 24);
+            this.pnlId.Size = new System.Drawing.Size(257, 20);
             this.pnlId.TabIndex = 2;
             this.pnlId.Visible = false;
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(3, 0);
+            this.txtId.Location = new System.Drawing.Point(2, 0);
+            this.txtId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(337, 22);
+            this.txtId.Size = new System.Drawing.Size(254, 20);
             this.txtId.TabIndex = 3;
             // 
             // pnlMeasureUnit
             // 
             this.pnlMeasureUnit.Controls.Add(this.cmbMeasureUnit);
-            this.pnlMeasureUnit.Location = new System.Drawing.Point(229, 12);
+            this.pnlMeasureUnit.Location = new System.Drawing.Point(172, 10);
+            this.pnlMeasureUnit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlMeasureUnit.Name = "pnlMeasureUnit";
-            this.pnlMeasureUnit.Size = new System.Drawing.Size(343, 26);
+            this.pnlMeasureUnit.Size = new System.Drawing.Size(257, 21);
             this.pnlMeasureUnit.TabIndex = 3;
             this.pnlMeasureUnit.Visible = false;
             // 
             // cmbMeasureUnit
             // 
             this.cmbMeasureUnit.FormattingEnabled = true;
-            this.cmbMeasureUnit.Location = new System.Drawing.Point(3, 0);
+            this.cmbMeasureUnit.Location = new System.Drawing.Point(2, 0);
+            this.cmbMeasureUnit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbMeasureUnit.Name = "cmbMeasureUnit";
-            this.cmbMeasureUnit.Size = new System.Drawing.Size(337, 24);
+            this.cmbMeasureUnit.Size = new System.Drawing.Size(254, 21);
             this.cmbMeasureUnit.TabIndex = 4;
             // 
             // pnlPriceRange
             // 
             this.pnlPriceRange.Controls.Add(this.nudToPrice);
             this.pnlPriceRange.Controls.Add(this.nudFromPrice);
-            this.pnlPriceRange.Location = new System.Drawing.Point(226, 12);
+            this.pnlPriceRange.Location = new System.Drawing.Point(170, 10);
+            this.pnlPriceRange.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlPriceRange.Name = "pnlPriceRange";
-            this.pnlPriceRange.Size = new System.Drawing.Size(343, 24);
+            this.pnlPriceRange.Size = new System.Drawing.Size(257, 20);
             this.pnlPriceRange.TabIndex = 3;
             this.pnlPriceRange.Visible = false;
             // 
-            // nudFromPrice
-            // 
-            this.nudFromPrice.Location = new System.Drawing.Point(3, 0);
-            this.nudFromPrice.Name = "nudFromPrice";
-            this.nudFromPrice.Size = new System.Drawing.Size(162, 22);
-            this.nudFromPrice.TabIndex = 4;
-            // 
             // nudToPrice
             // 
-            this.nudToPrice.Location = new System.Drawing.Point(171, 0);
+            this.nudToPrice.Location = new System.Drawing.Point(128, 0);
+            this.nudToPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nudToPrice.Name = "nudToPrice";
-            this.nudToPrice.Size = new System.Drawing.Size(162, 22);
+            this.nudToPrice.Size = new System.Drawing.Size(122, 20);
             this.nudToPrice.TabIndex = 4;
+            // 
+            // nudFromPrice
+            // 
+            this.nudFromPrice.Location = new System.Drawing.Point(2, 0);
+            this.nudFromPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudFromPrice.Name = "nudFromPrice";
+            this.nudFromPrice.Size = new System.Drawing.Size(122, 20);
+            this.nudFromPrice.TabIndex = 4;
             // 
             // pnlCaducity
             // 
             this.pnlCaducity.Controls.Add(this.dtpCaducity);
-            this.pnlCaducity.Location = new System.Drawing.Point(226, 12);
+            this.pnlCaducity.Location = new System.Drawing.Point(170, 10);
+            this.pnlCaducity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlCaducity.Name = "pnlCaducity";
-            this.pnlCaducity.Size = new System.Drawing.Size(343, 24);
+            this.pnlCaducity.Size = new System.Drawing.Size(257, 20);
             this.pnlCaducity.TabIndex = 4;
             this.pnlCaducity.Visible = false;
             // 
             // dtpCaducity
             // 
             this.dtpCaducity.Location = new System.Drawing.Point(2, 0);
+            this.dtpCaducity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpCaducity.Name = "dtpCaducity";
-            this.dtpCaducity.Size = new System.Drawing.Size(312, 22);
+            this.dtpCaducity.Size = new System.Drawing.Size(235, 20);
             this.dtpCaducity.TabIndex = 5;
             // 
             // rtbProductView
             // 
-            this.rtbProductView.Location = new System.Drawing.Point(12, 42);
+            this.rtbProductView.Location = new System.Drawing.Point(9, 34);
+            this.rtbProductView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rtbProductView.Name = "rtbProductView";
             this.rtbProductView.ReadOnly = true;
-            this.rtbProductView.Size = new System.Drawing.Size(776, 353);
+            this.rtbProductView.Size = new System.Drawing.Size(583, 288);
             this.rtbProductView.TabIndex = 5;
             this.rtbProductView.Text = "";
+            this.rtbProductView.TextChanged += new System.EventHandler(this.rtbProductView_TextChanged);
+            // 
+            // btnBuscarId
+            // 
+            this.btnBuscarId.Location = new System.Drawing.Point(462, 7);
+            this.btnBuscarId.Name = "btnBuscarId";
+            this.btnBuscarId.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarId.TabIndex = 6;
+            this.btnBuscarId.Text = "Buscar";
+            this.btnBuscarId.UseVisualStyleBackColor = true;
+            this.btnBuscarId.Click += new System.EventHandler(this.btnBuscarId_Click);
             // 
             // FrmProductManage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.btnBuscarId);
             this.Controls.Add(this.rtbProductView);
             this.Controls.Add(this.pnlCaducity);
             this.Controls.Add(this.pnlMeasureUnit);
@@ -200,6 +228,7 @@
             this.Controls.Add(this.pnlId);
             this.Controls.Add(this.cmbFinder);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmProductManage";
             this.Text = "Gestion de productos";
             this.Load += new System.EventHandler(this.FrmProductManage_Load);
@@ -208,8 +237,8 @@
             this.pnlId.PerformLayout();
             this.pnlMeasureUnit.ResumeLayout(false);
             this.pnlPriceRange.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nudFromPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudToPrice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFromPrice)).EndInit();
             this.pnlCaducity.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -232,5 +261,6 @@
         private System.Windows.Forms.Panel pnlCaducity;
         private System.Windows.Forms.DateTimePicker dtpCaducity;
         private System.Windows.Forms.RichTextBox rtbProductView;
+        private System.Windows.Forms.Button btnBuscarId;
     }
 }

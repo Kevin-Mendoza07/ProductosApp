@@ -14,21 +14,21 @@ namespace Infraestructure.Productos
         #region CRUD
         public void Add(Producto p)
         {
-            if(p == null)
+            if (p == null)
             {
                 throw new ArgumentException("El producto no puede ser null.");
             }
-            Add(p,ref productos);
+            Add(p, ref productos);
         }
 
         public int Update(Producto p)
         {
-            if(p == null)
+            if (p == null)
             {
                 throw new ArgumentException("El producto no puede ser null.");
             }
             int index = GetIndexById(p.Id);
-            if(index < 0)
+            if (index < 0)
             {
                 throw new Exception($"El producto con id:{p.Id} no existe.");
             }
@@ -49,7 +49,7 @@ namespace Infraestructure.Productos
             {
                 throw new Exception($"El producto con id:{p.Id} no existe.");
             }
-            if(index != (productos.Length - 1))
+            if (index != (productos.Length - 1))
             {
                 productos[index] = productos[productos.Length - 1];
             }
@@ -68,10 +68,24 @@ namespace Infraestructure.Productos
 
         #region Queries
         public Producto GetProductoById(int id)
+
+
         {
+
             int index = GetIndexById(id);
             return index < 0 ? null : productos[index];
+
+
+            //Array.Sort(productos, new Producto.ProductoIdCompare(); 
+            //Producto p = new Producto { Id = id };
+            //int index = Array.BinarySearch(productos, p, new Producto.ProductoIdCompare());
+            //return index < 0 ? null : productos[index];
         }
+
+
+        //int index = GetIndexById(id);
+        //return index < 0 ? null : productos[index];
+
 
         public Producto[] GetProductosByUnidadMedida(UnidadMedida um)
         {
